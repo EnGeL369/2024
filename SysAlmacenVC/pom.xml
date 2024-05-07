@@ -75,8 +75,7 @@
             <groupId>com.miglayout</groupId>
             <artifactId>miglayout</artifactId>
             <version>3.7.4</version>
-        </dependency>
-        
+        </dependency> 
         <dependency>
             <groupId>com.github.davidmp</groupId>
             <artifactId>SysSwingDmp</artifactId>
@@ -84,16 +83,13 @@
         </dependency>
         
     </dependencies>
-    
-    
+    <!-- sdsdsd -->
     <repositories>
         <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
         </repository>
     </repositories>
-
-
     <build>
         <plugins>
             <plugin>
@@ -109,7 +105,6 @@
                 </configuration>
             </plugin>
             <plugin>
-                <!--plujins en pom de repository https://mvnrepository.com/ -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>2.4</version>
