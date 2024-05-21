@@ -64,6 +64,7 @@ public class MainCliente extends javax.swing.JPanel {
                 ob[1] = listarCleintes.get(i).getDniruc();
                 ob[2] = listarCleintes.get(i).getNombrers();
                 ob[3] = listarCleintes.get(i).getDocumento();
+                
                 modelo.addRow(ob);
             }
         }
