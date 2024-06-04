@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Component;
 import pe.edu.upeu.syscenterlife.modelo.Cliente;
+import pe.edu.upeu.syscenterlife.modelo.SessionManager;
 import pe.edu.upeu.syscenterlife.servicio.ClienteService;
 
 
@@ -50,6 +51,7 @@ public class MainCliente extends javax.swing.JPanel {
     public void setContext (ConfigurableApplicationContext ctx){
         this.ctx=ctx;
         listarClientes();
+        usuarioLogin.setText(SessionManager.getInstance().getUsuarioNombre());
     }
 
     public void listarClientes() {
@@ -112,6 +114,7 @@ public class MainCliente extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         btnExcel = new javax.swing.JButton();
         btnPdf = new javax.swing.JButton();
+        usuarioLogin = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         btnNuevo = new javax.swing.JButton();
         btnRegistrar = new javax.swing.JButton();
@@ -148,13 +151,20 @@ public class MainCliente extends javax.swing.JPanel {
 
         btnPdf.setText("PDF");
 
+        usuarioLogin.setText("jlabel");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(usuarioLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -174,7 +184,9 @@ public class MainCliente extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
-                        .addComponent(jLabel1))
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(usuarioLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -185,7 +197,7 @@ public class MainCliente extends javax.swing.JPanel {
                             .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnExcel)
                             .addComponent(btnPdf))))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 255));
@@ -494,5 +506,6 @@ public class MainCliente extends javax.swing.JPanel {
     private javax.swing.JTextField txtBuscar;
     private javax.swing.JTextField txtDni;
     private javax.swing.JTextField txtNombre;
+    private javax.swing.JLabel usuarioLogin;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,15 +4,12 @@
  */
 package pe.edu.upeu.syscenterlife.modelo;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -52,9 +49,11 @@ public class VentCarrito {
     @Column(name = "estado")
     private int estado;
     
-    @JoinColumn(name = "id_usuario", referencedColumnName = "id_usuario")
+    /*@JoinColumn(name = "id_usuario", referencedColumnName = "id_usuario")
     @ManyToOne(optional = false)
     @JsonIgnoreProperties({"compras", "ventas", "compCarritos",
-        "ventCarritos"})
-    private Usuario idUsuario;
+        "ventCarritos"})*/
+    private Long idUsuario;
+    
+    
 }

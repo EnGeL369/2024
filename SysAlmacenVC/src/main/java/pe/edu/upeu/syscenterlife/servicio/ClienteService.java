@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import pe.com.syscenterlife.autocomp.ModeloDataAutocomplet;
 import pe.edu.upeu.syscenterlife.modelo.Cliente;
 import pe.edu.upeu.syscenterlife.repositorio.ClienteRepository;
+import pe.edu.upeu.syscenterlife.util.ErrorLogger;
 
 /**
  *
@@ -22,6 +23,8 @@ public class ClienteService {
 
     @Autowired
     ClienteRepository repository;
+    
+    ErrorLogger log=new ErrorLogger("ClienteService");
     //c
 
     public Cliente guardarEntidad(Cliente cliente) {
